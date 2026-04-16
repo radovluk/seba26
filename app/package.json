@@ -1,0 +1,13 @@
+{
+  "name": "seba-party",
+  "version": "1.0.0",
+  "description": "Sebovy 26. narozeniny - pivni leaderboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

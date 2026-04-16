@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎂 SEBA FEST 2026 🍺</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: #0d0d0d;
+      font-family: 'Nunito', Arial, sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ---- MEME TICKER ---- */
+    .ticker {
+      background: #FFB800;
+      color: #000;
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      padding: 6px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 22s linear infinite;
+    }
+    @keyframes ticker {
+      from { transform: translateX(100vw); }
+      to   { transform: translateX(-100%); }
+    }
+
+    /* ---- HEADER ---- */
+    .header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      position: relative;
+    }
+
+    .meme-label-top {
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: clamp(1rem, 4vw, 1.4rem);
+      color: #fff;
+      text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .photo-wrap {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto 16px;
+    }
+
+    .seba-photo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center 2%;
+      border-radius: 50%;
+      border: 6px solid #FFB800;
+      box-shadow:
+        0 0 0 3px #000,
+        0 0 0 9px #FFB800,
+        0 0 60px rgba(255,184,0,0.6),
+        0 0 120px rgba(255,100,50,0.3);
+      display: block;
+    }
+
+    .crown {
+      position: absolute;
+      top: -38px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 48px;
+      filter: drop-shadow(0 0 10px rgba(255,215,0,0.8));
+      animation: crownWiggle 1.5s ease-in-out infinite;
+    }
+    @keyframes crownWiggle {
+      0%,100% { transform: translateX(-50%) rotate(-8deg); }
+      50%      { transform: translateX(-50%) rotate(8deg) translateY(-6px); }
+    }
+
+    .meme-caption-photo {
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FFB800;
+      color: #000;
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      padding: 3px 14px;
+      border-radius: 4px;
+      white-space: nowrap;
+      border: 2px solid #000;
+    }
+
+    h1 {
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      letter-spacing: 4px;
+      line-height: 1;
+      color: #FFB800;
+      text-shadow:
+        4px 4px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 0 30px rgba(255,184,0,0.5);
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: clamp(1rem, 3.5vw, 1.6rem);
+      color: #aaa;
+      letter-spacing: 3px;
+    }
+
+    .date-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.06);
+      border: 2px solid rgba(255,184,0,0.5);
+      border-radius: 6px;
+      padding: 4px 16px;
+      font-size: 0.85rem;
+      color: #FFB800;
+      margin-top: 10px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+    }
+
+    /* ---- MEME QUOTES ---- */
+    .meme-quotes {
+      display: flex;
+      gap: 10px;
+      padding: 16px 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .meme-quote {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 0.8rem;
+      color: #ccc;
+      max-width: 200px;
+      text-align: center;
+      font-style: italic;
+      line-height: 1.4;
+    }
+    .meme-quote strong {
+      display: block;
+      font-size: 0.7rem;
+      color: #555;
+      margin-top: 4px;
+      font-style: normal;
+    }
+
+    /* ---- PROGRESS ---- */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+    .progress-section {
+      background: rgba(255,255,255,0.03);
+      border: 2px solid rgba(255,184,0,0.25);
+      border-radius: 20px;
+      padding: 24px;
+      margin: 10px 0 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .progress-section::before {
+      content: '🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺';
+      position: absolute;
+      top: 8px; left: 0; right: 0;
+      font-size: 1.4rem;
+      opacity: 0.07;
+      letter-spacing: 8px;
+    }
+
+    .progress-label {
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: 1rem;
+      color: #888;
+      letter-spacing: 4px;
+      margin-bottom: 4px;
+    }
+
+    .total-counter {
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: clamp(5rem, 18vw, 10rem);
+      line-height: 1;
+      color: #FFB800;
+      text-shadow:
+        5px 5px 0 #000,
+        -2px -2px 0 rgba(0,0,0,0.5),
+        0 0 40px rgba(255,184,0,0.4);
+    }
+
+    .goal-text {
+      font-size: 1rem;
+      color: #777;
+      margin: 6px 0 16px;
+    }
+    .goal-text span { color: #FFB800; font-weight: 900; }
+
+    .progress-bar-wrap {
+      background: rgba(255,255,255,0.06);
+      border-radius: 6px;
+      height: 28px;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid rgba(255,255,255,0.08);
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        #FFB800 0px, #FFB800 20px,
+        #FF6432 20px, #FF6432 40px
+      );
+      transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1);
+      position: relative;
+    }
+    .progress-bar-fill::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: shimmer 1.5s linear infinite;
+    }
+    @keyframes shimmer { from{left:-100%} to{left:100%} }
+
+    .progress-pct {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .goal-achieved {
+      margin-top: 14px;
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: clamp(1.2rem, 5vw, 2rem);
+      color: #FFB800;
+      text-shadow: 3px 3px 0 #000;
+      letter-spacing: 2px;
+      display: none;
+      animation: goalPop 0.4s ease infinite alternate;
+    }
+    @keyframes goalPop {
+      from { transform: scale(1) rotate(-1deg); }
+      to   { transform: scale(1.04) rotate(1deg); }
+    }
+
+    /* ---- LEADERBOARD ---- */
+    .leaderboard-title {
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      text-align: center;
+      margin-bottom: 14px;
+      letter-spacing: 4px;
+      color: #fff;
+      text-shadow: 3px 3px 0 #000;
+    }
+
+    .leaderboard { display: flex; flex-direction: column; gap: 10px; }
+
+    .player-card {
+      background: rgba(255,255,255,0.03);
+      border: 2px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.15s, border-color 0.3s;
+    }
+    .player-card:hover { transform: translateX(4px); }
+
+    .player-card.rank-1 { border-color: rgba(255,215,0,0.6); background: rgba(255,215,0,0.06); }
+    .player-card.rank-2 { border-color: rgba(192,192,192,0.4); }
+    .player-card.rank-3 { border-color: rgba(205,127,50,0.4); }
+    .player-card.is-seba { border-color: rgba(255,184,0,0.7); background: rgba(255,184,0,0.07); }
+
+    .rank {
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: 1.6rem;
+      width: 40px;
+      text-align: center;
+      flex-shrink: 0;
+      color: #444;
+    }
+    .rank-1 .rank { color: #FFD700; }
+    .rank-2 .rank { color: #C0C0C0; }
+    .rank-3 .rank { color: #CD7F32; }
+
+    .player-emoji { font-size: 1.8rem; width: 38px; text-align: center; flex-shrink: 0; }
+
+    .player-info { flex: 1; min-width: 0; }
+
+    .player-name {
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 1px 1px 0 #000;
+    }
+    .is-seba .player-name { color: #FFB800; }
+    .is-seba .player-name::after { content: ' 🎂'; }
+
+    .player-bar-wrap {
+      background: rgba(255,255,255,0.05);
+      border-radius: 4px;
+      height: 6px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+    .player-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #FFB800, #FF6432);
+      transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    .player-count {
+      font-family: 'Bangers', Impact, sans-serif;
+      font-size: 2.2rem;
+      color: #FFB800;
+      text-shadow: 2px 2px 0 #000;
+      min-width: 52px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .btn-group { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+    .beer-btn {
+      background: #FFB800;
+      border: 3px solid #000;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.1s;
+      box-shadow: 3px 3px 0 #000;
+      line-height: 1;
+    }
+    .beer-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #000; }
+    .beer-btn:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 #000; }
+
+    .minus-btn {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #555;
+      transition: all 0.15s;
+      font-weight: 900;
+      font-family: 'Nunito', sans-serif;
+    }
+    .minus-btn:hover { border-color: #ff6b6b; color: #ff6b6b; background: rgba(255,80,80,0.1); }
+
+    /* ---- BEER POP ---- */
+    .beer-pop {
+      position: fixed;
+      font-size: 2.5rem;
+      pointer-events: none;
+      z-index: 9999;
+      animation: beerPop 1s forwards;
+    }
+    @keyframes beerPop {
+      0%   { transform: translateY(0) scale(0.5) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-130px) scale(2) rotate(20deg); opacity: 0; }
+    }
+
+    /* ---- FOOTER ---- */
+    .refresh-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #333;
+      margin: 16px 0 4px;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px 0 30px;
+      color: #2a2a2a;
+      font-size: 0.8rem;
+    }
+
+    /* ---- CONFETTI ---- */
+    .confetti-bg {
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .c { position: absolute; opacity: 0; animation: cFall linear infinite; }
+    @keyframes cFall {
+      0%   { transform: translateY(-20px) rotate(0deg); opacity: 0.8; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+
+    .relative { position: relative; z-index: 1; }
+
+    @media (max-width: 480px) {
+      .player-card { gap: 8px; padding: 10px 10px; }
+      .beer-btn { padding: 7px 10px; font-size: 1.2rem; }
+      .player-count { font-size: 1.8rem; min-width: 42px; }
+      .meme-quotes { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="confetti-bg" id="confettiBg"></div>
+
+<div class="relative">
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <span class="ticker-inner">
+      &nbsp;&nbsp;&nbsp;🍺 SEBA MÁ 26 LET A MÁ VYPIT 26 PIV &nbsp;|&nbsp; TO JE MATEMATIKA PŘÁTELÉ &nbsp;|&nbsp; "JEN JEDNO PIVO" - SEBA, 22:00 &nbsp;|&nbsp; KAŽDÉ PIVO = 1 ROK MOUDROSTI 🧠 &nbsp;|&nbsp; HALELUJA 🙏 &nbsp;|&nbsp; KLIDNĚ DVĚ &nbsp;|&nbsp; 🍺 SEBA MÁ 26 LET A MÁ VYPIT 26 PIV &nbsp;|&nbsp; TO JE MATEMATIKA PŘÁTELÉ &nbsp;
+    </span>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="meme-label-top">BREAKING NEWS: SEBA DOSÁHL VĚKU 26</div>
+    <div class="photo-wrap">
+      <span class="crown">👑</span>
+      <img src="seba.jpg" alt="THE MAN THE MYTH THE LEGEND" class="seba-photo">
+      <div class="meme-caption-photo">THE BIRTHDAY BOY</div>
+    </div>
+    <h1>ŠŤASTNÝ<br>26. SEBO!</h1>
+    <p class="subtitle">16. DUBNA 2026 · PIVNÍ LEADERBOARD</p>
+    <div class="date-badge">🎂 26 let · 26 piv · 26 % battery zbývá</div>
+  </div>
+
+  <!-- MEME QUOTES -->
+  <div class="meme-quotes">
+    <div class="meme-quote">
+      "Jen jedno pivo a jdu domů."
+      <strong>— Seba, nikdy</strong>
+    </div>
+    <div class="meme-quote">
+      "26 piv za 26 let je vlastně dieta."
+      <strong>— odborníci</strong>
+    </div>
+    <div class="meme-quote">
+      "Každé pivo prodlouží život o rok."
+      <strong>— věda (možná)</strong>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="container">
+    <div class="progress-section">
+      <div class="progress-label">🍺 CELKEM VYPITO 🍺</div>
+      <div class="total-counter" id="totalCount">0</div>
+      <div class="goal-text">Cíl skupiny: <span>100 piv</span> · Seba osobně: <span>26</span> (za každý rok)</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="totalBar" style="width:0%"></div>
+        <span class="progress-pct" id="totalPct">0%</span>
+      </div>
+      <div class="goal-achieved" id="goalAchieved">🏆 CÍLE DOSAŽENO! SEBA = LEGENDA! 🏆</div>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div class="leaderboard-title">🏆 KDO PIJE VÍCEJ?</div>
+    <div class="leaderboard" id="leaderboard"></div>
+
+    <p class="refresh-note">⟳ Aktualizuje se každých 5 s — tvoje pivo se nezapomene</p>
+    <div class="footer">Narozeninová slavnost Sebastiana · 2026 · Vyrobeno s láskou a pivem</div>
+  </div>
+
+</div><!-- /relative -->
+
+<script>
+  // confetti
+  const bg = document.getElementById('confettiBg');
+  const cols = ['#FFB800','#FF6432','#FF1493','#00cfff','#a8ff78','#ff9ff3','#fff'];
+  for (let i = 0; i < 35; i++) {
+    const c = document.createElement('div');
+    c.className = 'c';
+    c.style.cssText = `
+      left:${Math.random()*100}%;
+      width:${Math.random()*8+4}px;
+      height:${Math.random()*8+4}px;
+      background:${cols[Math.floor(Math.random()*cols.length)]};
+      border-radius:${Math.random()>.5?'50%':'2px'};
+      animation-duration:${Math.random()*9+7}s;
+      animation-delay:${Math.random()*12}s;
+    `;
+    bg.appendChild(c);
+  }
+
+  let state = { participants: [], goal: 26 };
+
+  function rankEmoji(r) {
+    return r===1?'🥇':r===2?'🥈':r===3?'🥉':r;
+  }
+
+  function render() {
+    const sorted = [...state.participants].sort((a,b)=>b.beers-a.beers);
+    const maxB = Math.max(1, sorted[0]?.beers || 1);
+    const total = state.participants.reduce((s,p)=>s+p.beers,0);
+
+    document.getElementById('totalCount').textContent = total;
+    const pct = Math.min((total/state.goal)*100, 100);
+    document.getElementById('totalBar').style.width = pct+'%';
+    document.getElementById('totalPct').textContent = Math.round(pct)+'%';
+    document.getElementById('goalAchieved').style.display = total>=state.goal?'block':'none';
+
+    const lb = document.getElementById('leaderboard');
+    lb.innerHTML = '';
+    sorted.forEach((p,i) => {
+      const rank = i+1;
+      const isSeba = p.name === 'Seba';
+      const barPct = (p.beers/maxB)*100;
+      const card = document.createElement('div');
+      card.className = `player-card rank-${rank<=3?rank:'other'}${isSeba?' is-seba':''}`;
+      card.innerHTML = `
+        <div class="rank">${rankEmoji(rank)}</div>
+        <div class="player-emoji">${p.emoji}</div>
+        <div class="player-info">
+          <div class="player-name">${p.name}</div>
+          <div class="player-bar-wrap">
+            <div class="player-bar-fill" style="width:${barPct}%"></div>
+          </div>
+        </div>
+        <div class="player-count">${p.beers}</div>
+        <div class="btn-group">
+          <button class="minus-btn" onclick="removeBeer('${p.name}',event)">−</button>
+          <button class="beer-btn" onclick="addBeer('${p.name}',event)">🍺</button>
+        </div>
+      `;
+      lb.appendChild(card);
+    });
+  }
+
+  async function fetchScores() {
+    try { state = await (await fetch('/api/scores')).json(); render(); } catch(e){}
+  }
+
+  async function addBeer(name, event) {
+    spawnPop(event, '🍺');
+    try { state = await (await fetch(`/api/beer/${encodeURIComponent(name)}`,{method:'POST'})).json(); render(); } catch(e){}
+  }
+
+  async function removeBeer(name, event) {
+    event.stopPropagation();
+    try { state = await (await fetch(`/api/beer/${encodeURIComponent(name)}`,{method:'DELETE'})).json(); render(); } catch(e){}
+  }
+
+  function spawnPop(e, emoji) {
+    const el = document.createElement('div');
+    el.className = 'beer-pop';
+    el.textContent = emoji;
+    el.style.left = (e.clientX - 20) + 'px';
+    el.style.top  = (e.clientY - 20) + 'px';
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(), 1000);
+  }
+
+  fetchScores();
+  setInterval(fetchScores, 5000);
+</script>
+</body>
+</html>
