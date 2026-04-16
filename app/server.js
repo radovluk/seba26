@@ -15,7 +15,8 @@ const INITIAL_SCORES = {
     { name: 'Peta', emoji: '🎸', beers: 0 },
     { name: 'Anicka M.', emoji: '💫', beers: 0 },
     { name: 'Tomas', emoji: '🚀', beers: 0 },
-    { name: 'Lukas', emoji: '🍻', beers: 0 }
+    { name: 'Lukas', emoji: '🍻', beers: 0 },
+    { name: 'Zuzka', emoji: '🌺', beers: 0 }
   ],
   goal: 100,
   lastUpdated: new Date().toISOString()
